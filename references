@@ -1,0 +1,7 @@
+@Book{alexander2023,
+  author    = "Rohan Alexander",
+  title     = "Telling Stories with Data",
+  publisher = "CRC Press",
+  year      = "2023", 
+  url       = "https://https://tellingstorieswithdata.com/"
+}
