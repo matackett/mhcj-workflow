@@ -61,11 +61,15 @@ Another important piece of documentation is the datasheet that provides more inf
 
 # Code
 
+## R Scripts
+
 -   R script for infrequent tasks, i.e. creating data sets or writing functions
 
     -   Reference the R for Data Science Chapter
 
     -   Use comments throughout to explain what is happening
+
+## Quarto documents
 
 -   Literate programming for analysis
 
@@ -79,6 +83,8 @@ Another important piece of documentation is the datasheet that provides more inf
 
     -   Nice thing about Quarto is that you can easily make reports and presentations from the same document
 
+## General tips
+
 -   General tips
 
     -   Naming conventions - R for Data Science Chapter
@@ -89,7 +95,7 @@ Another important piece of documentation is the datasheet that provides more inf
 You can use the visual editor to make report writing in RStudio more similar to Google Docs / MS Word. Learn more about Quarto and visual editor.
 :::
 
-### Version Control 
+## Version Control 
 
 -   What is version control
 
