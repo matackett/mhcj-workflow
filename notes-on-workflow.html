@@ -67,15 +67,14 @@ div.csl-indent {
    
   <ul>
   <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link active" data-scroll-target="#reproducibility">Reproducibility</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a>
   <ul class="collapse">
-  <li><a href="#why-use-it-in-pace" id="toc-why-use-it-in-pace" class="nav-link" data-scroll-target="#why-use-it-in-pace">Why use it in PACE?</a></li>
-  <li><a href="#how-to-use-it-in-pace" id="toc-how-to-use-it-in-pace" class="nav-link" data-scroll-target="#how-to-use-it-in-pace">How to use it in PACE</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version Control</a></li>
   </ul></li>
-  <li><a href="#file-organization" id="toc-file-organization" class="nav-link" data-scroll-target="#file-organization">File organization</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization">Organization</a></li>
+  <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment">Environment</a></li>
+  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together">Putting it all together</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="notes-on-workflow.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
@@ -162,7 +161,7 @@ Note
 <li>Possible values / categories</li>
 <li>Units (if applicable)</li>
 </ul>
-<p>Another important piece of documentation is the datasheet that provides more information regarding the motivation for the data set, data collection, and ethical considerations. <span class="citation" data-cites="gebru2021datasheets">Gebru et al. (<a href="#ref-gebru2021datasheets" role="doc-biblioref">2021</a>)</span> gives a list of questions we can use to create “a datasheet that documents its motivation, composition, collection process, recommended uses, and so on.” The datasheet is intended for <em>data creators</em> and <em>data consumers</em>. Datasheets serve a specific purpose for each group:</p>
+<p>Another important piece of documentation is the datasheet that provides more information regarding the motivation for the data set, data collection, contents fo the data, and ethical considerations. <span class="citation" data-cites="gebru2021datasheets">Gebru et al. (<a href="#ref-gebru2021datasheets" role="doc-biblioref">2021</a>)</span> gives a list of questions we can use to create “a datasheet that documents its motivation, composition, collection process, recommended uses, and so on.” Datasheets serve a specific purpose for data creators and data consumers.</p>
 <ul>
 <li><p><strong>Data creators:</strong> “to encourage careful reflection on the process of creating, distributing, and maintaining a dataset, including any underlying assumptions, potential risks or harms, and implications of use”</p></li>
 <li><p><strong>Data consumers:</strong> “to ensure they have the information they need to make informed decisions about using a dataset”</p></li>
@@ -173,53 +172,76 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Something about looking at the paper and identifying what questions are relevant for a datasheet for our group.</p>
-</div>
-</div>
-</div>
-<p>Version control</p>
-<section id="why-use-it-in-pace" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-it-in-pace">Why use it in PACE?</h2>
-</section>
-<section id="how-to-use-it-in-pace" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-it-in-pace">How to use it in PACE</h2>
 <ul>
-<li>Download git</li>
+<li><p>What information from a datasheet might be useful and important for our project?</p></li>
+<li><p>Use the questions from <span class="citation" data-cites="gebru2021datasheets">Gebru et al. (<a href="#ref-gebru2021datasheets" role="doc-biblioref">2021</a>)</span> to build a template datasheet that could be used as documenation for data sets in our project. The datasheet doesn’t need to include all the questions from the paper, but be sure it includes at least one question from each section: Motivation, Composition, Collection Process, Preprocessing/cleaning/labeling, Uses, Distribution, Maintenance.</p></li>
 </ul>
+</div>
+</div>
+</div>
 </section>
-</section>
-<section id="file-organization" class="level1">
-<h1>File organization</h1>
-</section>
-<section id="workflow" class="level1">
-<h1>Workflow</h1>
+<section id="code" class="level1">
+<h1>Code</h1>
 <ul>
-<li><p>Choose file type based on the coding purpose</p></li>
-<li><p>Use R <strong>script</strong> to create data sets or other one time tasks</p>
+<li><p>R script for infrequent tasks, i.e.&nbsp;creating data sets or writing functions</p>
 <ul>
-<li>use comments throughout code</li>
+<li><p>Reference the R for Data Science Chapter</p></li>
+<li><p>Use comments throughout to explain what is happening</p></li>
 </ul></li>
-<li><p>Use Quarto for analysis</p>
+<li><p>Literate programming for analysis</p>
 <ul>
-<li><p>include narrative and some comments</p></li>
-<li><p>can use bullet points and notes, does not need to be fancy narrative until we’re ready to present results</p></li>
+<li><p>Use quarto</p></li>
+<li><p>Reference the R for Data Science Chapter on Quarto</p></li>
+<li><p>Use narrative to describe analysis steps and results. You want it detailed enough that someone else could understand your analysis process and results (or you can understand them if you read it a year later)</p></li>
+<li><p>Don’t need to write fancy prose as you’re working on the analysis - can use bullet points.</p></li>
+<li><p>Nice thing about Quarto is that you can easily make reports and presentations from the same document</p></li>
+</ul></li>
+<li><p>General tips</p>
+<ul>
+<li><p>Naming conventions - R for Data Science Chapter</p></li>
+<li><p>Code Style - Tidyverse style guide</p></li>
 </ul></li>
 </ul>
-</section>
-<section id="resources" class="level1">
-<h1>Resources</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can use the visual editor to make report writing in RStudio more similar to Google Docs / MS Word. Learn more about Quarto and visual editor.</p>
+</div>
+</div>
+<section id="version-control" class="level3">
+<h3 class="anchored" data-anchor-id="version-control">Version Control</h3>
 <ul>
-<li><p><a href="https://tellingstorieswithdata.com/03-workflow.html">Chapter 3: Reproducible Workflows</a> in <em>Telling Stories with Data</em></p></li>
-<li><p><a href="https://r4ds.hadley.nz/quarto.html">Chapter 29: Quarto</a> in R For Data Science (2nd edition)</p></li>
-<li><p><a href="https://arxiv.org/abs/1803.09010">Datasheets for Datasets</a> by Timnit Gebru et al.</p></li>
+<li><p>What is version control</p></li>
+<li><p>Why it’s important</p></li>
+<li><p>Telling Stories with data?</p></li>
+<li><p>How it works for our project without Github</p></li>
 </ul>
 </section>
-<section id="section" class="level1 unnumbered">
+</section>
+<section id="organization" class="level1">
+<h1>Organization</h1>
+<ul>
+<li><p>Telling stories with data file organization.</p></li>
+<li><p>File names mean something - R for Data Science</p></li>
+<li><p>Use a project for each new analysis</p></li>
+</ul>
+</section>
+<section id="environment" class="level1">
+<h1>Environment</h1>
+</section>
+<section id="putting-it-all-together" class="level1 unnumbered">
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Putting it all together</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-alexander2023" class="csl-entry" role="listitem">
 Alexander, Rohan. 2023. <em>Telling Stories with Data</em>. Chapman; Hall/CRC. <a href="https://tellingstorieswithdata.com">https://tellingstorieswithdata.com</a>.
 </div>

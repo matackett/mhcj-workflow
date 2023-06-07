@@ -47,46 +47,66 @@ At a minimum, [every]{.underline} data set should have a *codebook* (aka data di
 -   Possible values / categories
 -   Units (if applicable)
 
-Another important piece of documentation is the datasheet that provides more information regarding the motivation for the data set, data collection, and ethical considerations. @gebru2021datasheets gives a list of questions we can use to create "a datasheet that documents its motivation, composition, collection process, recommended uses, and so on." The datasheet is intended for *data creators* and *data consumers*. Datasheets serve a specific purpose for each group:
+Another important piece of documentation is the datasheet that provides more information regarding the motivation for the data set, data collection, contents fo the data, and ethical considerations. @gebru2021datasheets gives a list of questions we can use to create "a datasheet that documents its motivation, composition, collection process, recommended uses, and so on." Datasheets serve a specific purpose for data creators and data consumers.
 
 -   **Data creators:** "to encourage careful reflection on the process of creating, distributing, and maintaining a dataset, including any underlying assumptions, potential risks or harms, and implications of use"
 
 -   **Data consumers:** "to ensure they have the information they need to make informed decisions about using a dataset"
 
 ::: {.callout-important appearance="simple"}
-Something about looking at the paper and identifying what questions are relevant for a datasheet for our group.
+-   What information from a datasheet might be useful and important for our project?
+
+-   Use the questions from @gebru2021datasheets to build a template datasheet that could be used as documenation for data sets in our project. The datasheet doesn't need to include all the questions from the paper, but be sure it includes at least one question from each section: Motivation, Composition, Collection Process, Preprocessing/cleaning/labeling, Uses, Distribution, Maintenance.
 :::
 
-Version control
+# Code
 
-## Why use it in PACE?
+-   R script for infrequent tasks, i.e. creating data sets or writing functions
 
-## How to use it in PACE
+    -   Reference the R for Data Science Chapter
 
--   Download git
+    -   Use comments throughout to explain what is happening
 
-# File organization 
+-   Literate programming for analysis
 
-# Workflow
+    -   Use quarto
 
--   Choose file type based on the coding purpose
+    -   Reference the R for Data Science Chapter on Quarto
 
--   Use R **script** to create data sets or other one time tasks
+    -   Use narrative to describe analysis steps and results. You want it detailed enough that someone else could understand your analysis process and results (or you can understand them if you read it a year later)
 
-    -   use comments throughout code
+    -   Don't need to write fancy prose as you're working on the analysis - can use bullet points.
 
--   Use Quarto for analysis
+    -   Nice thing about Quarto is that you can easily make reports and presentations from the same document
 
-    -    include narrative and some comments
+-   General tips
 
-    -   can use bullet points and notes, does not need to be fancy narrative until we're ready to present results
+    -   Naming conventions - R for Data Science Chapter
 
-# Resources
+    -   Code Style - Tidyverse style guide
 
--   [Chapter 3: Reproducible Workflows](https://tellingstorieswithdata.com/03-workflow.html) in *Telling Stories with Data*
+::: callout-tip
+You can use the visual editor to make report writing in RStudio more similar to Google Docs / MS Word. Learn more about Quarto and visual editor.
+:::
 
--   [Chapter 29: Quarto](https://r4ds.hadley.nz/quarto.html) in R For Data Science (2nd edition)
+### Version Control 
 
--   [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) by Timnit Gebru et al.
+-   What is version control
 
-# 
+-   Why it's important
+
+-   Telling Stories with data?
+
+-   How it works for our project without Github
+
+# Organization 
+
+-   Telling stories with data file organization.
+
+-   File names mean something - R for Data Science
+
+-   Use a project for each new analysis
+
+# Environment
+
+# Putting it all together
