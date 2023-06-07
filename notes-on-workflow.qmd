@@ -2,9 +2,9 @@
 title: "Notes on Workflow for Mental Health and the Justice System in Durham County"
 date: 6/5/2023
 author: Maria Tackett
+toc: true
 format: 
-  html: 
-    toc: true
+  html: default
   pdf: default
 editor: visual
 bibliography: references.bib
