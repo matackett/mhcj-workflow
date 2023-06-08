@@ -1,5 +1,5 @@
 ---
-title: "Notes on Workflow" 
+title: "Notes on Reproducible Workflows"
 subtitle: "Mental Health and the Justice System in Durham County"
 date: last-modified
 date-format: short
@@ -58,7 +58,7 @@ Another important piece of documentation is the datasheet that provides more inf
 ::: {.callout-important appearance="simple"}
 -   What information from a datasheet might be useful and important for our project?
 
--   Use the questions from @gebru2021datasheets to build a template datasheet that could be used as documenation for data sets in our project. The datasheet doesn't need to include all the questions from the paper, but be sure it includes at least one question from each section: Motivation, Composition, Collection Process, Preprocessing/cleaning/labeling, Uses, Distribution, Maintenance.
+-   Use the questions from @gebru2021datasheets to build a template datasheet that could be used as documentation for data sets in our project. The datasheet doesn't need to include all the questions from the paper, but be sure it includes at least one question from each section: Motivation, Composition, Collection Process, Preprocessing/cleaning/labeling, Uses, Distribution, Maintenance.
 :::
 
 # Code
