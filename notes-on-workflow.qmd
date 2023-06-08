@@ -107,15 +107,13 @@ Tips for writing reproducible R scripts and Quarto documents:
 
 ## Version control
 
-Let's come back to this.
+Version control is the process of systematically tracking changes to a file. Instead of saving new versions of a file each time we update it (i.e. `my-analysis.qmd`, `my-analysis-v2.qmd`, `my-analysis-final.qmd`, `my-analysis-final-updated.qmd`), we can practice version control by documenting the changes made to a single file. Practicing version control makes it easier for future you and others to see the history of changes made to a file. It is also useful for debugging code, as version control allows you go more easily go back to a previous version of a file before issues occurred.
 
-<!--# What is version control -->
+*Git* is a software used for version control. You can install git on your computer (or PACE machine) and use basic git functions in the Git pane in RStudio. As you work on an analysis, periodically write a short and informative message describing the changes you've made (e.g., `Add logistic regression model with interaction terms`) and then *commit* those changes. The *History* button in the Git pane displays a history of all the commits made to the current R project.
 
-<!--# Why it's important -->
+We often think of [GitHub](https://www.github.com) and [GitLab](https://gitlab.oit.duke.edu/users/sign_in) when talking about version control. These are both platforms made to store git-based projects. You can think of them as ways to backup your git-based work. Given the security restrictions in PACE, we are unable to store work on these platforms; however, we are still able to implement version control using git within PACE.
 
-<!--# Telling Stories with data? -->
-
-<!--# How it works for our project without Github-->
+See Section [3.4 Version control](https://tellingstorieswithdata.com/03-workflow.html#version-control) in *Telling Stories with Data* for more information about version control and using git in RStudio.
 
 # Organization
 
