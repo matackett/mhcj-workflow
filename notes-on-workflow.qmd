@@ -1,6 +1,7 @@
 ---
-title: "Notes on Workflow for Mental Health and the Justice System in Durham County"
-date: 6/5/2023
+title: "Notes on Workflow" 
+subtitle: "Mental Health and the Justice System in Durham County"
+date: Sys.time()
 author: Maria Tackett
 toc: true
 format: 
@@ -14,7 +15,7 @@ bibliography: references.bib
 The source code for this document is available at [github.com/matackett/mhjs-workflow](https://github.com/matackett/mhjs-workflow). Please [open an issue](https://github.com/matackett/mhjs-workflow/issues) or [submit a pull request](https://github.com/matackett/mhjs-workflow/pulls) if you have any edits or additions.
 :::
 
-# Reproducibility  
+# Reproducibility
 
 In *Telling Stories with Data* [@alexander2023], Rohan Alexander describes reproducibility as the following (emphasis mine):
 
@@ -61,58 +62,74 @@ Another important piece of documentation is the datasheet that provides more inf
 
 # Code
 
-## R Scripts
+The R code and analyses will be written in one of two file types: R scripts (.R) and Quarto document (.qmd). In general, use a script for processes that produce output but not analyses (e.g., creating data sets, writing functions, and building Shiny apps). In contrast, use Quarto documents for analysis (e.g., exploratory data analysis, model building, etc.) that require narrative and interpretation in addition to the code and output.
 
--   R script for infrequent tasks, i.e. creating data sets or writing functions
+## R scripts
 
-    -   Reference the R for Data Science Chapter
+Making the code in scripts reproducible not only means ensuring the same output is produced every time the code is run but also that the code is reasonable to the user (either future you or someone else). One way to make code more readable is to use comments periodically throughout the script to briefly describe what the code is doing. Additionally, use comments to explain why you're doing something and what you're trying to achieve, especially for things in the code that are unusual or not immediately obvious [@alexander2023].
 
-    -   Use comments throughout to explain what is happening
+Use `#` to start each line of a comment. Comments can be written on new lines or at the end of a line of code.
+
+In addition to writing comments, you can make code more readable by writing code in sections with a header to mark each section and writing a preamble at the top of the script that provides some metadata about the script. See [Section 3.5.4: Code comments and style](https://tellingstorieswithdata.com/03-workflow.html#code-comments-and-style) in *Telling Stories with Data for* more information and examples.
+
+::: {.callout-important appearance="simple"}
+Suppose we want to create a data set to build a longitudinal model to understand factors associated with rebookings over time. To get started, a team member copies the *bookings* data set into the Summer 2023 folder. They glance at the data in Excel and notice some of the charges are misspelled. They use CTRL+F to find and correct all the instances of the misspelling. Then they load the corrected data set into R and use it to make the data set for model building. \
+\
+Is this process reproducible? Why or why not? If not, what are potential issues from handling the data this way? How can the team member make the process more reproducible?
+:::
 
 ## Quarto documents
 
--   Literate programming for analysis
+Write all analyses using a Quarto document (similar to R Markdown but more powerful)s .
 
-    -   Use quarto
+> Quarto provides a unified authoring framework for data science, combining your code, its results, and your prose. Quarto documents are fully reproducible and support dozens of output formats, like PDFs, Word files, presentations, and more. [@r4ds]
 
-    -   Reference the R for Data Science Chapter on Quarto
+You can read [Chapter 29: Quarto in *R for Data Science (2e)*](https://r4ds.hadley.nz/quarto.html#quarto-basics)to learn more about using Quarto and the visual editor in RStudio ([Section 29.3](https://r4ds.hadley.nz/quarto.html#visual-editor)).
 
-    -   Use narrative to describe analysis steps and results. You want it detailed enough that someone else could understand your analysis process and results (or you can understand them if you read it a year later)
+Similar to the comments in an R script, write narrative throughout the Quarto document to describe your analysis process, motivation for taking particular steps (e.g., why did you choose a specific type of model), and the interpretation from the code output. You can think of this like a research notebook, your narrative does not need to be fancy (bullet points are fine), but it should be detailed enough that you and others understand the process and interpretations. As you continue working on the analysis, you can update and render the Quarto document to see the updated results.
 
-    -   Don't need to write fancy prose as you're working on the analysis - can use bullet points.
+One of the best features of Quarto documents is that they can easily be rendered in different formats. Therefore the same document used to analyze the results can be used to generate reports and presentations. As you get closer to sharing the results, you can formalize the narrative and use code chunk options, such as `echo: false` and `eval: false` to hide code chunks and skip chunks of code that may no longer be relevant.
 
-    -   Nice thing about Quarto is that you can easily make reports and presentations from the same document
-
-## General tips
-
--   General tips
-
-    -   Naming conventions - R for Data Science Chapter
-
-    -   Code Style - Tidyverse style guide
+[Quarto.org](https://quarto.org/) is an excellent resource with up-to-date code and tips for producing documents in Quarto.
 
 ::: callout-tip
-You can use the visual editor to make report writing in RStudio more similar to Google Docs / MS Word. Learn more about Quarto and visual editor.
+Tips for writing reproducible R scripts and Quarto documents:
+
+-   Load all packages at the beginning of the script or Quarto document. This is especially important for Quarto, as the code renders in order from beginning to end.
+
+-   Use short and meaningful variable names. See [Section 5.1: Names](https://r4ds.hadley.nz/workflow-style.html#names) in *R for Data Science (2e)*)
+
+-   Write code according to the [Tidyverse style guide](https://style.tidyverse.org/) to make it more readable. See [Chapter 5 Workflow: code style](https://r4ds.hadley.nz/workflow-style.html) in *R for Data Science (2e)* for an abbreviated guide)
+
+-   Use the visual editor to write Quarto documents. The visual editor makes writing in RStudio similar to writing in Google dos or MS Word (but with code!). See [Section 29.3 Visual editor](https://r4ds.hadley.nz/quarto.html#visual-editor) in *R for Data Science (2e)* to learn more.
 :::
 
-## Version Control 
+## Version control
 
--   What is version control
+Let's come back to this.
 
--   Why it's important
+<!--# What is version control -->
 
--   Telling Stories with data?
+<!--# Why it's important -->
 
--   How it works for our project without Github
+<!--# Telling Stories with data? -->
 
-# Organization 
+<!--# How it works for our project without Github-->
 
--   Telling stories with data file organization.
+# Organization
 
--   File names mean something - R for Data Science
+Projects are a nice way to organize your work. They are "widely used in software development and exist to keep all the files (data, analysis, report, etc) associated with a particular project together and related to each other." [@alexander2023]. Projects also allow you to reference files in "self contained" using relative paths (e.g., \`data/mydata.csv\` instead of \`User/mt324/my-project/data/my-data.csv\`). Relative paths are important for reproducibility, as they when the project is opened on different computers.
 
--   Use a project for each new analysis
+A project is essentially a folder on your computer, so you can organize the files in a way that will be easy for you and others to navigate. [Section 3.3 R projects and file structure](https://tellingstorieswithdata.com/03-workflow.html#r-projects-and-file-structure) in *Telling Stories with Data* gives an example organization scheme for an R project. Section [7.2.3 RStudio Projects](https://r4ds.hadley.nz/workflow-scripts.html#saving-and-naming) in *R for Data Science (2e)* gives more detail about how to create and use projects.
+
+Within the project, use file names that are both "machine readable" and "human readable". [Section 7.1.3 Saving and naming](https://r4ds.hadley.nz/workflow-scripts.html#saving-and-naming) in *R for Data Science (2e)* provides guidelines and examples for making machine and human readable file names.
+
+::: {.callout-important appearance="simple"}
+How might we organize the work on this team into projects, e.g., a project for each analysis? each team member? etc.?
+:::
 
 # Environment
 
-# Putting it all together
+In the context of reproducibility in R and RStudio, the *environment* essentially refers to the version for all R packages used in a project. Because R packages are regularly updated, being able to reproduce the project environment is important for long-term reproducibility of projects.
+
+A rigorous approach is using the [renv](https://rstudio.github.io/renv/articles/renv.html) package [@renv] which stores the R packages in the project directory [@r4ds]. Another option is to run the function `sessionInfo()` and save the results in the project directory. This function will provide give information about the R version, details about the computer, packages, and their versions.

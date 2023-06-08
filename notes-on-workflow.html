@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Maria Tackett">
-<meta name="dcterms.date" content="2023-06-05">
 
-<title>Notes on Workflow for Mental Health and the Justice System in Durham County</title>
+<title>Notes on Workflow</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,14 +69,12 @@ div.csl-indent {
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a>
   <ul class="collapse">
-  <li><a href="#r-scripts" id="toc-r-scripts" class="nav-link" data-scroll-target="#r-scripts">R Scripts</a></li>
+  <li><a href="#r-scripts" id="toc-r-scripts" class="nav-link" data-scroll-target="#r-scripts">R scripts</a></li>
   <li><a href="#quarto-documents" id="toc-quarto-documents" class="nav-link" data-scroll-target="#quarto-documents">Quarto documents</a></li>
-  <li><a href="#general-tips" id="toc-general-tips" class="nav-link" data-scroll-target="#general-tips">General tips</a></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version Control</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version control</a></li>
   </ul></li>
   <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization">Organization</a></li>
   <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment">Environment</a></li>
-  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together">Putting it all together</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="notes-on-workflow.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
@@ -85,7 +82,8 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes on Workflow for Mental Health and the Justice System in Durham County</h1>
+<h1 class="title">Notes on Workflow</h1>
+<p class="subtitle lead">Mental Health and the Justice System in Durham County</p>
 </div>
 
 
@@ -102,7 +100,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 5, 2023</p>
+      <p class="date">Invalid Date</p>
     </div>
   </div>
   
@@ -185,38 +183,35 @@ Note
 </section>
 <section id="code" class="level1">
 <h1>Code</h1>
+<p>The R code and analyses will be written in one of two file types: R scripts (.R) and Quarto document (.qmd). In general, use a script for processes that produce output but not analyses (e.g., creating data sets, writing functions, and building Shiny apps). In contrast, use Quarto documents for analysis (e.g., exploratory data analysis, model building, etc.) that require narrative and interpretation in addition to the code and output.</p>
 <section id="r-scripts" class="level2">
-<h2 class="anchored" data-anchor-id="r-scripts">R Scripts</h2>
-<ul>
-<li><p>R script for infrequent tasks, i.e.&nbsp;creating data sets or writing functions</p>
-<ul>
-<li><p>Reference the R for Data Science Chapter</p></li>
-<li><p>Use comments throughout to explain what is happening</p></li>
-</ul></li>
-</ul>
+<h2 class="anchored" data-anchor-id="r-scripts">R scripts</h2>
+<p>Making the code in scripts reproducible not only means ensuring the same output is produced every time the code is run but also that the code is reasonable to the user (either future you or someone else). One way to make code more readable is to use comments periodically throughout the script to briefly describe what the code is doing. Additionally, use comments to explain why you’re doing something and what you’re trying to achieve, especially for things in the code that are unusual or not immediately obvious <span class="citation" data-cites="alexander2023">(<a href="#ref-alexander2023" role="doc-biblioref">Alexander 2023</a>)</span>.</p>
+<p>Use <code>#</code> to start each line of a comment. Comments can be written on new lines or at the end of a line of code.</p>
+<p>In addition to writing comments, you can make code more readable by writing code in sections with a header to mark each section and writing a preamble at the top of the script that provides some metadata about the script. See <a href="https://tellingstorieswithdata.com/03-workflow.html#code-comments-and-style">Section 3.5.4: Code comments and style</a> in <em>Telling Stories with Data for</em> more information and examples.</p>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Suppose we want to create a data set to build a longitudinal model to understand factors associated with rebookings over time. To get started, a team member copies the <em>bookings</em> data set into the Summer 2023 folder. They glance at the data in Excel and notice some of the charges are misspelled. They use CTRL+F to find and correct all the instances of the misspelling. Then they load the corrected data set into R and use it to make the data set for model building.<br>
+<br>
+Is this process reproducible? Why or why not? If not, what are potential issues from handling the data this way? How can the team member make the process more reproducible?</p>
+</div>
+</div>
+</div>
 </section>
 <section id="quarto-documents" class="level2">
 <h2 class="anchored" data-anchor-id="quarto-documents">Quarto documents</h2>
-<ul>
-<li><p>Literate programming for analysis</p>
-<ul>
-<li><p>Use quarto</p></li>
-<li><p>Reference the R for Data Science Chapter on Quarto</p></li>
-<li><p>Use narrative to describe analysis steps and results. You want it detailed enough that someone else could understand your analysis process and results (or you can understand them if you read it a year later)</p></li>
-<li><p>Don’t need to write fancy prose as you’re working on the analysis - can use bullet points.</p></li>
-<li><p>Nice thing about Quarto is that you can easily make reports and presentations from the same document</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="general-tips" class="level2">
-<h2 class="anchored" data-anchor-id="general-tips">General tips</h2>
-<ul>
-<li><p>General tips</p>
-<ul>
-<li><p>Naming conventions - R for Data Science Chapter</p></li>
-<li><p>Code Style - Tidyverse style guide</p></li>
-</ul></li>
-</ul>
+<p>Write all analyses using a Quarto document (similar to R Markdown but more powerful)s .</p>
+<blockquote class="blockquote">
+<p>Quarto provides a unified authoring framework for data science, combining your code, its results, and your prose. Quarto documents are fully reproducible and support dozens of output formats, like PDFs, Word files, presentations, and more. <span class="citation" data-cites="r4ds">(<a href="#ref-r4ds" role="doc-biblioref">Hadley Wickham 2023</a>)</span></p>
+</blockquote>
+<p>You can read <a href="https://r4ds.hadley.nz/quarto.html#quarto-basics">Chapter 29: Quarto in <em>R for Data Science (2e)</em></a>to learn more about using Quarto and the visual editor in RStudio (<a href="https://r4ds.hadley.nz/quarto.html#visual-editor">Section 29.3</a>).</p>
+<p>Similar to the comments in an R script, write narrative throughout the Quarto document to describe your analysis process, motivation for taking particular steps (e.g., why did you choose a specific type of model), and the interpretation from the code output. You can think of this like a research notebook, your narrative does not need to be fancy (bullet points are fine), but it should be detailed enough that you and others understand the process and interpretations. As you continue working on the analysis, you can update and render the Quarto document to see the updated results.</p>
+<p>One of the best features of Quarto documents is that they can easily be rendered in different formats. Therefore the same document used to analyze the results can be used to generate reports and presentations. As you get closer to sharing the results, you can formalize the narrative and use code chunk options, such as <code>echo: false</code> and <code>eval: false</code> to hide code chunks and skip chunks of code that may no longer be relevant.</p>
+<p><a href="https://quarto.org/">Quarto.org</a> is an excellent resource with up-to-date code and tips for producing documents in Quarto.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -227,42 +222,60 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can use the visual editor to make report writing in RStudio more similar to Google Docs / MS Word. Learn more about Quarto and visual editor.</p>
+<p>Tips for writing reproducible R scripts and Quarto documents:</p>
+<ul>
+<li><p>Load all packages at the beginning of the script or Quarto document. This is especially important for Quarto, as the code renders in order from beginning to end.</p></li>
+<li><p>Use short and meaningful variable names. See <a href="https://r4ds.hadley.nz/workflow-style.html#names">Section 5.1: Names</a> in <em>R for Data Science (2e)</em>)</p></li>
+<li><p>Write code according to the <a href="https://style.tidyverse.org/">Tidyverse style guide</a> to make it more readable. See <a href="https://r4ds.hadley.nz/workflow-style.html">Chapter 5 Workflow: code style</a> in <em>R for Data Science (2e)</em> for an abbreviated guide)</p></li>
+<li><p>Use the visual editor to write Quarto documents. The visual editor makes writing in RStudio similar to writing in Google dos or MS Word (but with code!). See <a href="https://r4ds.hadley.nz/quarto.html#visual-editor">Section 29.3 Visual editor</a> in <em>R for Data Science (2e)</em> to learn more.</p></li>
+</ul>
 </div>
 </div>
 </section>
 <section id="version-control" class="level2">
-<h2 class="anchored" data-anchor-id="version-control">Version Control</h2>
-<ul>
-<li><p>What is version control</p></li>
-<li><p>Why it’s important</p></li>
-<li><p>Telling Stories with data?</p></li>
-<li><p>How it works for our project without Github</p></li>
-</ul>
+<h2 class="anchored" data-anchor-id="version-control">Version control</h2>
+<p>Let’s come back to this.</p>
+<!--# What is version control -->
+<!--# Why it's important -->
+<!--# Telling Stories with data? -->
+<!--# How it works for our project without Github-->
 </section>
 </section>
 <section id="organization" class="level1">
 <h1>Organization</h1>
-<ul>
-<li><p>Telling stories with data file organization.</p></li>
-<li><p>File names mean something - R for Data Science</p></li>
-<li><p>Use a project for each new analysis</p></li>
-</ul>
+<p>Projects are a nice way to organize your work. They are “widely used in software development and exist to keep all the files (data, analysis, report, etc) associated with a particular project together and related to each other.” <span class="citation" data-cites="alexander2023">(<a href="#ref-alexander2023" role="doc-biblioref">Alexander 2023</a>)</span>. Projects also allow you to reference files in “self contained” using relative paths (e.g., `data/mydata.csv` instead of `User/mt324/my-project/data/my-data.csv`). Relative paths are important for reproducibility, as they when the project is opened on different computers.</p>
+<p>A project is essentially a folder on your computer, so you can organize the files in a way that will be easy for you and others to navigate. <a href="https://tellingstorieswithdata.com/03-workflow.html#r-projects-and-file-structure">Section 3.3 R projects and file structure</a> in <em>Telling Stories with Data</em> gives an example organization scheme for an R project. Section <a href="https://r4ds.hadley.nz/workflow-scripts.html#saving-and-naming">7.2.3 RStudio Projects</a> in <em>R for Data Science (2e)</em> gives more detail about how to create and use projects.</p>
+<p>Within the project, use file names that are both “machine readable” and “human readable”. <a href="https://r4ds.hadley.nz/workflow-scripts.html#saving-and-naming">Section 7.1.3 Saving and naming</a> in <em>R for Data Science (2e)</em> provides guidelines and examples for making machine and human readable file names.</p>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>How might we organize the work on this team into projects, e.g., a project for each analysis? each team member? etc.?</p>
+</div>
+</div>
+</div>
 </section>
 <section id="environment" class="level1">
 <h1>Environment</h1>
+<p>In the context of reproducibility in R and RStudio, the <em>environment</em> essentially refers to the version for all R packages used in a project. Because R packages are regularly updated, being able to reproduce the project environment is important for long-term reproducibility of projects.</p>
+<p>A rigorous approach is using the <a href="https://rstudio.github.io/renv/articles/renv.html">renv</a> package <span class="citation" data-cites="renv">(<a href="#ref-renv" role="doc-biblioref">Ushey 2023</a>)</span> which stores the R packages in the project directory <span class="citation" data-cites="r4ds">(<a href="#ref-r4ds" role="doc-biblioref">Hadley Wickham 2023</a>)</span>. Another option is to run the function <code>sessionInfo()</code> and save the results in the project directory. This function will provide give information about the R version, details about the computer, packages, and their versions.</p>
+
 </section>
-<section id="putting-it-all-together" class="level1 unnumbered">
 
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Putting it all together</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-alexander2023" class="csl-entry" role="listitem">
 Alexander, Rohan. 2023. <em>Telling Stories with Data</em>. Chapman; Hall/CRC. <a href="https://tellingstorieswithdata.com">https://tellingstorieswithdata.com</a>.
 </div>
 <div id="ref-gebru2021datasheets" class="csl-entry" role="listitem">
 Gebru, Timnit, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III au2, and Kate Crawford. 2021. <span>“Datasheets for Datasets.”</span> <a href="https://arxiv.org/abs/1803.09010">https://arxiv.org/abs/1803.09010</a>.
+</div>
+<div id="ref-r4ds" class="csl-entry" role="listitem">
+Hadley Wickham, Garrett Grolemund, Mine Çetinkaya-Rundel. 2023. <em>R for Data Science (2e)</em>. O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
+</div>
+<div id="ref-renv" class="csl-entry" role="listitem">
+Ushey, Kevin. 2023. <span>“Renv: Project Environments.”</span> <a href="https://CRAN.R-project.org/package=renv">https://CRAN.R-project.org/package=renv</a>.
 </div>
 </div></section></div></main>
 <!-- /main column -->

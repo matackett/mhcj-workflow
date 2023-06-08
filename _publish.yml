@@ -1,0 +1,4 @@
+- source: notes-on-workflow.qmd
+  quarto-pub:
+    - id: 0f650f96-279a-497d-8162-0f6aa0725c8a
+      url: 'https://maria.quarto.pub/notes-on-workflow'
