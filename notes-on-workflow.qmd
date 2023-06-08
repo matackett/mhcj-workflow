@@ -1,7 +1,8 @@
 ---
 title: "Notes on Workflow" 
 subtitle: "Mental Health and the Justice System in Durham County"
-date: Sys.time()
+date: last-modified
+date-format: short
 author: Maria Tackett
 toc: true
 format: 
