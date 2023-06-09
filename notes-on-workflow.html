@@ -8,7 +8,7 @@
 
 <meta name="author" content="Maria Tackett">
 
-<title>Notes on Workflow</title>
+<title>Notes on Reproducible Workflows</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes on Workflow</h1>
+<h1 class="title">Notes on Reproducible Workflows</h1>
 <p class="subtitle lead">Mental Health and the Justice System in Durham County</p>
 </div>
 
@@ -125,18 +125,18 @@ Note
 </div>
 <section id="reproducibility" class="level1">
 <h1>Reproducibility</h1>
-<p>In <em>Telling Stories with Data</em> <span class="citation" data-cites="alexander2023">(<a href="#ref-alexander2023" role="doc-biblioref">Alexander 2023</a>)</span>, Rohan Alexander describes reproducibility as the following (emphasis mine):</p>
+<p>In <em>Telling Stories with Data</em> <span class="citation" data-cites="alexander2023">(<a href="#ref-alexander2023" role="doc-biblioref">Alexander 2023</a>)</span>, Rohan Alexander as this about reproducibility (emphasis mine):</p>
 <blockquote class="blockquote">
 <p><em>“Alexander (<a href="https://tellingstorieswithdata.com/99-references.html#ref-Alexander2019">2019</a>) defines reproducible research as that which can be exactly redone, given</em> all <em>the materials used. This underscores the importance of providing the <strong>code, data, and environment</strong>. The minimum expectation is that another person is independently able to use your code, data, and environment to get your results, including figures and tables.”</em></p>
 </blockquote>
-<p>Using this definition as a guide, we can think about how to make our research reproducible by establishing good practices in each of the following components:</p>
+<p>Using this definition as a guide, we can think about how to make our research reproducible by establishing good practices in each of the following areas:</p>
 <ol type="1">
 <li>Data</li>
 <li>Code (and analysis)</li>
 <li>Organization</li>
 <li>Environment</li>
 </ol>
-<p>We’ll address each of these components separately to help organize our thinking, but in reality all these components intertwine, so we’ll often need to discuss one while discussing the other. For example, we can’t establish best practices for coding without thinking about the data.</p>
+<p>We’ll address each of these areas separately to help organize our thinking, but in reality they all intertwine, so we’ll often need to discuss one while discussing the other. For example, we can’t establish best practices for coding without thinking about the data.</p>
 <div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -145,7 +145,7 @@ Note
 <div class="callout-body-container">
 <ul>
 <li><p>Why is it important to do the work on this project in a reproducible way?</p></li>
-<li><p>What are practical considerations to keep in mind as we develop reproducible practices for this project?</p></li>
+<li><p>What are practical considerations to keep in mind as we develop reproducible workflows for this project?</p></li>
 </ul>
 </div>
 </div>
@@ -153,8 +153,8 @@ Note
 </section>
 <section id="data" class="level1">
 <h1>Data</h1>
-<p>In the 2021 paper <a href="https://arxiv.org/pdf/1803.09010">Datasets for Datasheets</a> <span class="citation" data-cites="gebru2021datasheets">(<a href="#ref-gebru2021datasheets" role="doc-biblioref">Gebru et al. 2021</a>)</span>, Gebru et al.&nbsp;name two stakeholders for a data set: <em>data creators</em> and <em>data consumers</em>. For many data sets the creator and consumer are one in the same. In either case, clear and detailed data documentation is critical for both parties to understand what’s in a data set, how the data can be analyzed, and the context and limitations of any results gleaned from the data.</p>
-<p>At a minimum, <u>every</u> data set should have a <em>codebook</em> (aka data dictionary) that documents what each row represents, and every every column in the data set</p>
+<p>In the 2021 paper <a href="https://arxiv.org/pdf/1803.09010">Datasheets for Datasets</a> <span class="citation" data-cites="gebru2021datasheets">Gebru et al. (<a href="#ref-gebru2021datasheets" role="doc-biblioref">2021</a>)</span> name two stakeholders for a data set: <em>data creators</em> and <em>data consumers</em>. For many data sets the creator and consumer are one in the same. Whether they are the same or different parties, clear and detailed data documentation is critical for both parties to understand what’s in a data set, how the data can be analyzed, and the context and limitations of any results gleaned from the data.</p>
+<p>At a minimum, <u>every</u> data set should have a <em>codebook</em> (aka data dictionary) that documents what each row represents, and the following information for every column:</p>
 <ul>
 <li>Column name</li>
 <li>Data type</li>
@@ -162,7 +162,7 @@ Note
 <li>Possible values / categories</li>
 <li>Units (if applicable)</li>
 </ul>
-<p>Another important piece of documentation is the datasheet that provides more information regarding the motivation for the data set, data collection, contents fo the data, and ethical considerations. <span class="citation" data-cites="gebru2021datasheets">Gebru et al. (<a href="#ref-gebru2021datasheets" role="doc-biblioref">2021</a>)</span> gives a list of questions we can use to create “a datasheet that documents its motivation, composition, collection process, recommended uses, and so on.” Datasheets serve a specific purpose for data creators and data consumers.</p>
+<p>Another important piece of documentation is the datasheet that provides more information regarding the motivation for the data set, data collection, contents of the data, and ethical considerations. <span class="citation" data-cites="gebru2021datasheets">Gebru et al. (<a href="#ref-gebru2021datasheets" role="doc-biblioref">2021</a>)</span> gives a list of questions we can use to create “a datasheet that documents its motivation, composition, collection process, recommended uses, and so on.” Datasheets serve a different purposes for data creators and data consumers.</p>
 <ul>
 <li><p><strong>Data creators:</strong> “to encourage careful reflection on the process of creating, distributing, and maintaining a dataset, including any underlying assumptions, potential risks or harms, and implications of use”</p></li>
 <li><p><strong>Data consumers:</strong> “to ensure they have the information they need to make informed decisions about using a dataset”</p></li>
@@ -174,8 +174,8 @@ Note
 </div>
 <div class="callout-body-container">
 <ul>
-<li><p>What information from a datasheet might be useful and important for our project?</p></li>
-<li><p>Use the questions from <span class="citation" data-cites="gebru2021datasheets">Gebru et al. (<a href="#ref-gebru2021datasheets" role="doc-biblioref">2021</a>)</span> to build a template datasheet that could be used as documenation for data sets in our project. The datasheet doesn’t need to include all the questions from the paper, but be sure it includes at least one question from each section: Motivation, Composition, Collection Process, Preprocessing/cleaning/labeling, Uses, Distribution, Maintenance.</p></li>
+<li><p>Why might datasheets be useful and important for our project?</p></li>
+<li><p>Use the questions from <span class="citation" data-cites="gebru2021datasheets">Gebru et al. (<a href="#ref-gebru2021datasheets" role="doc-biblioref">2021</a>)</span> to build a template datasheet that could be used as documentation for data sets in our project. The datasheet doesn’t need to include all the questions from the paper, but be sure it includes at least one question from each section: Motivation, Composition, Collection Process, Preprocessing/cleaning/labeling, Uses, Distribution, Maintenance.</p></li>
 </ul>
 </div>
 </div>
@@ -183,19 +183,19 @@ Note
 </section>
 <section id="code" class="level1">
 <h1>Code</h1>
-<p>The R code and analyses will be written in one of two file types: R scripts (.R) and Quarto document (.qmd). In general, use a script for processes that produce output but not analyses (e.g., creating data sets, writing functions, and building Shiny apps). In contrast, use Quarto documents for analysis (e.g., exploratory data analysis, model building, etc.) that require narrative and interpretation in addition to the code and output.</p>
+<p>The R code and analyses will be written in one of two file types: R scripts (.R) and Quarto documents (.qmd). In general, use a script for processes that produce output but not analyses (e.g., creating data sets, writing functions, and building Shiny apps). In contrast, use Quarto documents for analysis (e.g., exploratory data analysis, model building, etc.) that require narrative and interpretation in addition to the code and output.</p>
 <section id="r-scripts" class="level2">
 <h2 class="anchored" data-anchor-id="r-scripts">R scripts</h2>
-<p>Making the code in scripts reproducible not only means ensuring the same output is produced every time the code is run but also that the code is reasonable to the user (either future you or someone else). One way to make code more readable is to use comments periodically throughout the script to briefly describe what the code is doing. Additionally, use comments to explain why you’re doing something and what you’re trying to achieve, especially for things in the code that are unusual or not immediately obvious <span class="citation" data-cites="alexander2023">(<a href="#ref-alexander2023" role="doc-biblioref">Alexander 2023</a>)</span>.</p>
+<p>Making the code in scripts reproducible not only means ensuring the same output is produced every time the code is run but also that the code is readable to future you and others. One way to make code more readable is to use comments periodically throughout the script to briefly describe what the code is doing. Additionally, use comments to explain why you’re doing something and what you’re trying to achieve, especially for things in the code that are unusual or not immediately obvious <span class="citation" data-cites="alexander2023">(<a href="#ref-alexander2023" role="doc-biblioref">Alexander 2023</a>)</span>.</p>
 <p>Use <code>#</code> to start each line of a comment. Comments can be written on new lines or at the end of a line of code.</p>
-<p>In addition to writing comments, you can make code more readable by writing code in sections with a header to mark each section and writing a preamble at the top of the script that provides some metadata about the script. See <a href="https://tellingstorieswithdata.com/03-workflow.html#code-comments-and-style">Section 3.5.4: Code comments and style</a> in <em>Telling Stories with Data for</em> more information and examples.</p>
+<p>In addition to writing comments, you can make code more readable by writing code in sections with a header to mark each section and writing a preamble at the top of the script that provides some metadata about the script. See <a href="https://tellingstorieswithdata.com/03-workflow.html#code-comments-and-style">Section 3.5.4 Code comments and style</a> in <em>Telling Stories with Data for</em> more information and examples.</p>
 <div class="callout callout-style-simple callout-important">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Suppose we want to create a data set to build a longitudinal model to understand factors associated with rebookings over time. To get started, a team member copies the <em>bookings</em> data set into the Summer 2023 folder. They glance at the data in Excel and notice some of the charges are misspelled. They use CTRL+F to find and correct all the instances of the misspelling. Then they load the corrected data set into R and use it to make the data set for model building.<br>
+<p>Suppose we want to create a data set to build a longitudinal model to understand factors associated with rebookings over time. To get started, a team member copies the <em>bookings</em> data set into the Summer 2023 folder. They glance at the data in Excel and notice some of the charges are misspelled. They use <code>CTRL+F</code> to find and correct all the instances of the misspelling. Then they load the corrected data set into R and use it to make the desired model building data set.<br>
 <br>
 Is this process reproducible? Why or why not? If not, what are potential issues from handling the data this way? How can the team member make the process more reproducible?</p>
 </div>
@@ -204,13 +204,13 @@ Is this process reproducible? Why or why not? If not, what are potential issues 
 </section>
 <section id="quarto-documents" class="level2">
 <h2 class="anchored" data-anchor-id="quarto-documents">Quarto documents</h2>
-<p>Write all analyses using a Quarto document (similar to R Markdown but more powerful)s .</p>
+<p>Write all analyses using a Quarto document (similar to R Markdown but more powerful!).</p>
 <blockquote class="blockquote">
 <p>Quarto provides a unified authoring framework for data science, combining your code, its results, and your prose. Quarto documents are fully reproducible and support dozens of output formats, like PDFs, Word files, presentations, and more. <span class="citation" data-cites="r4ds">(<a href="#ref-r4ds" role="doc-biblioref">Hadley Wickham 2023</a>)</span></p>
 </blockquote>
-<p>You can read <a href="https://r4ds.hadley.nz/quarto.html#quarto-basics">Chapter 29: Quarto in <em>R for Data Science (2e)</em></a>to learn more about using Quarto and the visual editor in RStudio (<a href="https://r4ds.hadley.nz/quarto.html#visual-editor">Section 29.3</a>).</p>
-<p>Similar to the comments in an R script, write narrative throughout the Quarto document to describe your analysis process, motivation for taking particular steps (e.g., why did you choose a specific type of model), and the interpretation from the code output. You can think of this like a research notebook, your narrative does not need to be fancy (bullet points are fine), but it should be detailed enough that you and others understand the process and interpretations. As you continue working on the analysis, you can update and render the Quarto document to see the updated results.</p>
-<p>One of the best features of Quarto documents is that they can easily be rendered in different formats. Therefore the same document used to analyze the results can be used to generate reports and presentations. As you get closer to sharing the results, you can formalize the narrative and use code chunk options, such as <code>echo: false</code> and <code>eval: false</code> to hide code chunks and skip chunks of code that may no longer be relevant.</p>
+<p>You can read <a href="https://r4ds.hadley.nz/quarto.html#quarto-basics">Chapter 29 Quarto in <em>R for Data Science (2e)</em></a>to learn more about using Quarto and the visual editor in RStudio (<a href="https://r4ds.hadley.nz/quarto.html#visual-editor">Section 29.3</a>).</p>
+<p>Similar to the comments in an R script, write narrative throughout the Quarto document to describe your analysis process, motivation for taking particular steps (e.g., why did you choose a specific type of model), and the interpretation from the code output. You can think of this like a research notebook; your narrative does not need to be polished at first (bullet points are fine), but it should be detailed enough that you and others understand the process and interpretations. As you continue working on the analysis, you can render the Quarto document to see the updated results.</p>
+<p>One of the best features of Quarto documents is that they can easily be rendered in different formats. Therefore the same document used to analyze the results can be used to generate reports and presentations. As you get closer to sharing the results, you can polish the narrative and use code chunk options, such as <code>echo: false</code> and <code>eval: false</code> to hide code chunks and skip chunks of code that may no longer be relevant.</p>
 <p><a href="https://quarto.org/">Quarto.org</a> is an excellent resource with up-to-date code and tips for producing documents in Quarto.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -225,7 +225,7 @@ Tip
 <p>Tips for writing reproducible R scripts and Quarto documents:</p>
 <ul>
 <li><p>Load all packages at the beginning of the script or Quarto document. This is especially important for Quarto, as the code renders in order from beginning to end.</p></li>
-<li><p>Use short and meaningful variable names. See <a href="https://r4ds.hadley.nz/workflow-style.html#names">Section 5.1: Names</a> in <em>R for Data Science (2e)</em>)</p></li>
+<li><p>Use short and meaningful variable names. See <a href="https://r4ds.hadley.nz/workflow-style.html#names">Section 5.1 Names</a> in <em>R for Data Science (2e)</em>)</p></li>
 <li><p>Write code according to the <a href="https://style.tidyverse.org/">Tidyverse style guide</a> to make it more readable. See <a href="https://r4ds.hadley.nz/workflow-style.html">Chapter 5 Workflow: code style</a> in <em>R for Data Science (2e)</em> for an abbreviated guide)</p></li>
 <li><p>Use the visual editor to write Quarto documents. The visual editor makes writing in RStudio similar to writing in Google dos or MS Word (but with code!). See <a href="https://r4ds.hadley.nz/quarto.html#visual-editor">Section 29.3 Visual editor</a> in <em>R for Data Science (2e)</em> to learn more.</p></li>
 </ul>
@@ -234,7 +234,7 @@ Tip
 </section>
 <section id="version-control" class="level2">
 <h2 class="anchored" data-anchor-id="version-control">Version control</h2>
-<p>Version control is the process of systematically tracking changes to a file. Instead of saving new versions of a file each time we update it (i.e.&nbsp;<code>my-analysis.qmd</code>, <code>my-analysis-v2.qmd</code>, <code>my-analysis-final.qmd</code>, <code>my-analysis-final-updated.qmd</code>), we can practice version control by documenting the changes made to a single file. Practicing version control makes it easier for future you and others to see the history of changes made to a file. It is also useful for debugging code, as version control allows you go more easily go back to a previous version of a file before issues occurred.</p>
+<p>Version control is the process of systematically tracking changes to a file. Instead of saving new versions of a file each time we update it (i.e., <code>my-analysis.qmd</code>, <code>my-analysis-v2.qmd</code>, <code>my-analysis-final.qmd</code>, <code>my-analysis-final-updated.qmd</code>), we can practice version control by documenting the changes made to a single file. Practicing version control makes it easier for future you and others to see the history of changes made to a file. It is also useful for debugging code, as version control allows you go more easily go back to a previous version of a file before issues occurred.</p>
 <p><em>Git</em> is a software used for version control. You can install git on your computer (or PACE machine) and use basic git functions in the Git pane in RStudio. As you work on an analysis, periodically write a short and informative message describing the changes you’ve made (e.g., <code>Add logistic regression model with interaction terms</code>) and then <em>commit</em> those changes. The <em>History</em> button in the Git pane displays a history of all the commits made to the current R project.</p>
 <p>We often think of <a href="https://www.github.com">GitHub</a> and <a href="https://gitlab.oit.duke.edu/users/sign_in">GitLab</a> when talking about version control. These are both platforms made to store git-based projects. You can think of them as ways to backup your git-based work. Given the security restrictions in PACE, we are unable to store work on these platforms; however, we are still able to implement version control using git within PACE.</p>
 <p>See Section <a href="https://tellingstorieswithdata.com/03-workflow.html#version-control">3.4 Version control</a> in <em>Telling Stories with Data</em> for more information about version control and using git in RStudio.</p>
@@ -242,7 +242,7 @@ Tip
 </section>
 <section id="organization" class="level1">
 <h1>Organization</h1>
-<p>Projects are a nice way to organize your work. They are “widely used in software development and exist to keep all the files (data, analysis, report, etc) associated with a particular project together and related to each other.” <span class="citation" data-cites="alexander2023">(<a href="#ref-alexander2023" role="doc-biblioref">Alexander 2023</a>)</span>. Projects also allow you to reference files in “self contained” using relative paths (e.g., `data/mydata.csv` instead of `User/mt324/my-project/data/my-data.csv`). Relative paths are important for reproducibility, as they when the project is opened on different computers.</p>
+<p>Projects are a nice way to organize your work. They are “widely used in software development and exist to keep all the files (data, analysis, report, etc) associated with a particular project together and related to each other.” <span class="citation" data-cites="alexander2023">(<a href="#ref-alexander2023" role="doc-biblioref">Alexander 2023</a>)</span>. Projects also allow you to reference files in “self contained” using relative paths (e.g., <code>data/mydata.csv</code> instead of <code>User/mt324/my-project/data/my-data.csv</code>). Relative paths are important for reproducibility, as they still work when the R project is opened on different computers.</p>
 <p>A project is essentially a folder on your computer, so you can organize the files in a way that will be easy for you and others to navigate. <a href="https://tellingstorieswithdata.com/03-workflow.html#r-projects-and-file-structure">Section 3.3 R projects and file structure</a> in <em>Telling Stories with Data</em> gives an example organization scheme for an R project. Section <a href="https://r4ds.hadley.nz/workflow-scripts.html#saving-and-naming">7.2.3 RStudio Projects</a> in <em>R for Data Science (2e)</em> gives more detail about how to create and use projects.</p>
 <p>Within the project, use file names that are both “machine readable” and “human readable”. <a href="https://r4ds.hadley.nz/workflow-scripts.html#saving-and-naming">Section 7.1.3 Saving and naming</a> in <em>R for Data Science (2e)</em> provides guidelines and examples for making machine and human readable file names.</p>
 <div class="callout callout-style-simple callout-important">
@@ -258,8 +258,8 @@ Tip
 </section>
 <section id="environment" class="level1">
 <h1>Environment</h1>
-<p>In the context of reproducibility in R and RStudio, the <em>environment</em> essentially refers to the version for all R packages used in a project. Because R packages are regularly updated, being able to reproduce the project environment is important for long-term reproducibility of projects.</p>
-<p>A rigorous approach is using the <a href="https://rstudio.github.io/renv/articles/renv.html">renv</a> package <span class="citation" data-cites="renv">(<a href="#ref-renv" role="doc-biblioref">Ushey 2023</a>)</span> which stores the R packages in the project directory <span class="citation" data-cites="r4ds">(<a href="#ref-r4ds" role="doc-biblioref">Hadley Wickham 2023</a>)</span>. Another option is to run the function <code>sessionInfo()</code> and save the results in the project directory. This function will provide give information about the R version, details about the computer, packages, and their versions.</p>
+<p>In the context of reproducibility in R and RStudio, the <em>environment</em> essentially refers to the version of all R packages used in a project. Because R packages are regularly updated, being able to reproduce the project environment is important for long-term reproducibility of projects.</p>
+<p>A rigorous approach is using the <a href="https://rstudio.github.io/renv/articles/renv.html">renv</a> package <span class="citation" data-cites="renv">(<a href="#ref-renv" role="doc-biblioref">Ushey 2023</a>)</span> which stores the R packages in the project directory <span class="citation" data-cites="r4ds">(<a href="#ref-r4ds" role="doc-biblioref">Hadley Wickham 2023</a>)</span>. Another option is to run the function <code>sessionInfo()</code> and save the results in the project directory. This function will print give information about the R version, details about the computer, packages, and their versions.</p>
 
 </section>
 
